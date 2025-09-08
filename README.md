@@ -1,6 +1,15 @@
 # BSIP_Assignment_1_Students
-Student starting point for assignment 1 in Akeem's stats class. Clone this repository to get started. 
 
-You'll need to create your own copy of this repository, that is available on GitHub, since that is what others will look at to evaluate your work. After you've cloned the repository, make some changes, save them, and attempt to commit those changes. You should get an error/message telling you that you don't have permission and offering you the option to "fork". Choose the fork option. Forking the repository will create your own personal copy that you can work on and publish as your own that is also available on GitHub. After forking, on the GitHub site, under settings for the repository, ensure the visibility is public.  
+Student starting point for assignment 1 in Akeem's stats class. Clone this repository that you started through the GitHub Education link from the assignment link.
 
-The code starting point, questions, and directions are all in the notebook file. 
+## Testing
+
+There is a sample test file called test_as1.py that you can use to test your functions. You can run this from the command line with:
+
+```bash
+pytest test_as1.py
+```
+
+It also runs when you push to GitHub, so you can see if your code is working there as well. You need to write the tests yourself, but there are some examples in the test file to get you started. 
+
+When this is checked, I'll replace this with a more complete test file and run it to test the functionality part. 
