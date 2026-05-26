@@ -23,7 +23,7 @@ jobs:
     steps:
       - name: Copy Environment Variables
         run: |
-          echo "GH_PAT=${{ secrets.GH_PAT }}" >> $GITHUB_ENV
+          echo "file_transfers=${{ secrets.file_transfers }}" >> $GITHUB_ENV
       
       - name: Open Original Repository
         uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
           repository: 'AkeemSemperDataScience/BSIP-Assignment-1-Students'
           ref: 'main'
 
-          #token: ${{ secrets.GH_PAT }}
+          #token: ${{ secrets.file_transfers }}
       - name: Check Rep
         run: |
           ls
@@ -42,7 +42,7 @@ jobs:
         with:
           owner: 'AkeemSemper'
           repository: 'Basic_Stats_in_Python_Full_Repo'
-          access-token: ${{ secrets.GH_PAT }}
+          access-token: ${{ secrets.file_transfers }}
 
       - name: Access cloned repository content 
         run: |
