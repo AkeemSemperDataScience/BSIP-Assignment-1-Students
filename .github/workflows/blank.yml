@@ -52,6 +52,7 @@ jobs:
           # Copy all
           #rm -rf
           cp -r Basic_Stats_in_Python_Full_Repo/student_work/assignments/asn1/* .
+          cp -r Basic_Stats_in_Python_Full_Repo/student_work/assignments/asn1/.devcontainer .devcontainer
           rm -f SAMP_SOL*
           #rm -f generate_tests.ipynb
           #ls -la workbooks
