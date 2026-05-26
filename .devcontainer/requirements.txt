@@ -1,0 +1,80 @@
+# ─────────────────────────────────────────────
+# Core data science
+# ─────────────────────────────────────────────
+numpy
+pandas
+polars
+scipy
+statsmodels
+
+# ─────────────────────────────────────────────
+# Visualisation
+# ─────────────────────────────────────────────
+matplotlib
+seaborn
+ipywidgets
+
+# ─────────────────────────────────────────────
+# Machine learning – classical
+# ─────────────────────────────────────────────
+scikit-learn
+xgboost
+mlxtend
+
+# ─────────────────────────────────────────────
+# Gradient boosting / ensembles
+# ─────────────────────────────────────────────
+
+# ─────────────────────────────────────────────
+# Deep learning – PyTorch
+#
+# !! Do NOT add torch/torchvision/torchaudio here directly.
+#    PyTorch requires a hardware-specific index URL.
+#    The correct variant is installed by the Dockerfile.
+#    See the three options in the Dockerfile's RUN block:
+#      • CUDA (NVIDIA GPU)  ← active by default
+#      • CPU only
+#      • Apple Silicon (MPS)
+# ─────────────────────────────────────────────
+
+# ─────────────────────────────────────────────
+# Hyperparameter tuning
+# ─────────────────────────────────────────────
+ray[tune]
+
+# ─────────────────────────────────────────────
+# NLP
+# ─────────────────────────────────────────────
+nltk
+gensim
+transformers
+datasets          # HuggingFace datasets
+
+# ─────────────────────────────────────────────
+# Time series
+# ─────────────────────────────────────────────
+sktime
+prophet
+yfinance
+
+# ─────────────────────────────────────────────
+# Geospatial
+# ─────────────────────────────────────────────
+geopandas
+shapely
+
+# ─────────────────────────────────────────────
+# Computer vision helpers
+# ─────────────────────────────────────────────
+
+# ─────────────────────────────────────────────
+# Notebook / utility
+# ─────────────────────────────────────────────
+jupyterlab
+notebook
+ipykernel
+requests
+
+# ─────────────────────────────────────────────
+# Others
+# ─────────────────────────────────────────────
