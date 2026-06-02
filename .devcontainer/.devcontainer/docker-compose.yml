@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  ml-notebooks:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: ml-notebooks
+    volumes:
+      # Mount the entire repo into /workspace
+      - ..:/workspace:cached
+    ports:
+      # Jupyter Lab UI (access at http://localhost:8888)
+      - "8888:8888"
+      # TensorBoard (access at http://localhost:6006)
+      - "6006:6006"
+    environment:
+      - PYTHONPATH=/workspace
+      - TENSORBOARD_PORT=6006
+    # Keep the container running when used as a dev container
+    command: sleep infinity
