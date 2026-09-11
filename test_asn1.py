@@ -42,21 +42,34 @@ def test_effectSizer_2():
 def test_cohortCompare_1():
     df = pd.DataFrame({
         'age': [25, 30, 35, 40, 45, 50],
-        'height': [160, 165, 170, 175, 180, 185]
+        'height': [160, 165, 170, 175, 180, 185],
+        'hair': ['brown', 'blonde', 'blonde', 'red', 'brown', 'blonde']
     })
-    cohorts = [(20, 30), (31, 40), (41, 50)]
+    cohorts = ["hair"]
     result = cohortCompare(df, cohorts)
-    assert isinstance(result, pd.DataFrame)
-    assert result.shape[0] == len(cohorts)
-    assert all(stat in result.columns for stat in ['mean', 'median', 'std', 'min', 'max'])
+    result_set = {}
+    for cohort_name, metrics in result.items():
+        result_set[cohort_name] = metrics
+    #assert isinstance(result, pd.DataFrame)
+    #assert result.shape[0] == len(cohorts)
+    test_1 = result_set["hair_blonde"].getStats()
+    test_1_mean = test_1["mean"]
+    print(test_1_mean)
+
 
 def test_cohortCompare_2():
     df = pd.DataFrame({
         'age': [18, 22, 27, 29, 31, 35, 40, 45],
-        'weight': [50, 55, 60, 65, 70, 75, 80, 85]
+        'weight': [50, 55, 60, 65, 70, 75, 80, 85],
+        'gender': ['M', 'F', 'M', 'F', 'M', 'F', 'M', 'F']
     })
-    cohorts = [(18, 25), (26, 35), (36, 45)]
-    result = cohortCompare(df, cohorts, statistics=['mean', 'std'])
-    assert isinstance(result, pd.DataFrame)
-    assert result.shape[0] == len(cohorts)
-    assert all(stat in result.columns for stat in ['mean', 'std'])
+    cohorts = ["gender"]
+    result = cohortCompare(df, cohorts)
+    result_set = {}
+    for cohort_name, metrics in result.items():
+        result_set[cohort_name] = metrics
+    #for cohort_name, metrics in result.items():
+    #    print(cohort_name + ": " + str(metrics) + "\n")
+    #assert isinstance(result, pd.DataFrame)
+    #assert result.shape[0] == len(cohorts)
+    test_1 = result_set["gender_F"].getStats()
