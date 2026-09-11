@@ -52,10 +52,8 @@ def cohortCompare(df, cohorts, statistics=['mean', 'median', 'std', 'min', 'max'
 
     pass
 
+
 class CohortMetric():
-    """
-    Please use this to store the statistics for each cohort, don't change it.
-    """
     def __init__(self, cohort_name):
         self.cohort_name = cohort_name
         self.statistics = {
