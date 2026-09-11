@@ -80,8 +80,8 @@ def test_cohortCompare_2():
     result_set = {}
     for cohort_name, metrics in result.items():
         result_set[cohort_name] = metrics
-    for cohort_name, metrics in result.items():
-        print(cohort_name + ": " + str(metrics) + "\n")
+    #for cohort_name, metrics in result.items():
+    #    print(cohort_name + ": " + str(metrics) + "\n")
     #assert isinstance(result, pd.DataFrame)
     #assert result.shape[0] == len(cohorts)
     test_1 = result_set["gender_F"].getStats()
@@ -89,5 +89,3 @@ def test_cohortCompare_2():
     t1_age_std = test_1_std["age"]
     t1_weight_std = test_1_std["weight"]
     assert np.isclose(t1_age_std, f_age_std, .3) & np.isclose(t1_weight_std, f_weight_std, .3)
-
-test_cohortCompare_2()
