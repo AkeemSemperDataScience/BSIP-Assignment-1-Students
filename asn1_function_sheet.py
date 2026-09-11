@@ -134,25 +134,21 @@ def effectSizer(df, num_col, cat_col):
     return d
 
 def cohenEffectSize(group1, group2):
-    #diff = group1.mean() - group2.mean()
-    #var1 = group1.var()
-    #var2 = group2.var()
     n1 = len(group1)
     n2 = len(group2)
     diff = np.mean(group1) - np.mean(group2)
     var1 = np.var(group1)
     var2 = np.var(group2)
     
-    #pooled_var = math.sqrt((n1 * var1 + n2 * var2) / (n1 + n2))
-    pooled_data = np.concatenate([group1, group2])
-    pooled_var = np.var(pooled_data)
-    d = diff/math.sqrt(pooled_var)
+    pooled_var = ((n1*var1) + (n2*var2)) / (n1+n2)
+    d = diff / np.sqrt(pooled_var)
+    print("Effect size: ", d)
     return d
 
 set1 = [10, 12, 14]
 set2 = [16, 18, 20]
 testce = cohenEffectSize(set1, set2)
-print(testce)
+print("Effect size: ", testce)
 
 def cohortCompare(df, cohorts, statistics=['mean', 'median', 'std', 'min', 'max']):
 
@@ -225,5 +221,5 @@ df = pd.DataFrame({
 })
 cohorts = ["hair"]
 result = cohortCompare(df, cohorts)
-for cohort_name, metrics in result.items():
-    print(cohort_name + ": " + str(metrics) + "\n")
+#for cohort_name, metrics in result.items():
+#    print(cohort_name + ": " + str(metrics) + "\n")
